@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Star Catcher</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="game.js"></script>
+  </head>
+
+  <body>
+    <a-scene physics="gravity: 0">
+      <a-assets>
+        <a-asset-item id="starModel" src="assets/star/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-sky color="#000022"></a-sky>
+
+      <!-- Camera -->
+      <a-entity id="player" camera wasd-controls look-controls position="0 1.6 0">
+        <!-- UI Text -->
+        <a-entity id="scoreText" position="0 -0.3 -1" text="value: Stars: 0/5; color: #FFF; width: 2;"></a-entity>
+        <a-entity id="timerText" position="0 -0.5 -1" text="value: Time: 60; color: #FFF; width: 2;"></a-entity>
+        <a-entity id="endText" position="0 -0.7 -1" text="value: ; color: yellow; width: 3;"></a-entity>
+      </a-entity>
+
+      <!-- Stars -->
+      <a-entity id="star1" gltf-model="#starModel" collectible position="3 1 -5" scale="1 1 1"></a-entity>
+      <a-entity id="star2" gltf-model="#starModel" collectible position="-3 2 -7" scale="1 1 1"></a-entity>
+      <a-entity id="star3" gltf-model="#starModel" collectible position="2 3 -10" scale="1 1 1"></a-entity>
+      <a-entity id="star4" gltf-model="#starModel" collectible position="5 2 -12" scale="1 1 1"></a-entity>
+      <a-entity id="star5" gltf-model="#starModel" collectible position="-4 1 -9" scale="1 1 1"></a-entity>
+    </a-scene>
+  </body>
+</html>
